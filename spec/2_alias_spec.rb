@@ -5,10 +5,10 @@ class Foo
   def say_hello
     "hello"
   end
-
 end
 
 #here is something interesting, in ruby, I can open the class and define an alias
+#unfortunately with C# the closest you can get to this is inheritence or extension methods
 class Foo
   alias :hello :say_hello
 end
