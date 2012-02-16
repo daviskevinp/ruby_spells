@@ -32,11 +32,4 @@ class Foo : Gemini
     return whatToSay;
   }
 }
-
-dynamic foo = new Foo();
-
-foo.SayHello(); //returns Hello
-
-foo.SayBye(); //returns Bye
-
 =end
