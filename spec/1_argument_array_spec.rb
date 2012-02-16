@@ -23,37 +23,8 @@ end
 
 
 =begin
-Here is the same thing in C#
-
-class Foo
-{
-  public IEnumerable<string> ClassNames(params object[] args)
-  {
-    return args.Select(arg => arg.GetType().Name);
-  }
-}
-
 ruby uses argument arrays in conjunction with hashes to define a jagged parameter list, for example:
 
 Person.find(:first, :order => "created_on DESC", :offset => 5)
 Person.find(:last, :conditions => [ "user_name = ?", "admin"])
-
-C# can do something similar
-
-Person.Find(new { option = "First", order = "created_on DESC", offset = 5 });
-Person.Find(new { option = "Last", conditions = new [] { "user_name = ?", "admin" });
-
-or you can opt into the dynamic construct and do it via Gemini
-
-class Foo : Gemini
-{
-  dynamic Find(dynamic args)
-  {
-    //args.option, order, and offset will be available given the line below
-  }
-}
-
-foo.Find(option: "First", order: "created_on DESC", offset: 5);
-foo.Find(option: "Last", conditions: new [] { "user_name = ?", "admin" });
-
 =end

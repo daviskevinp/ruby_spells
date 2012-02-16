@@ -1,0 +1,6 @@
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.dll
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.pdb
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\NSpec.dll
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\obj\Debug\DynamicTests.dll
+C:\Development\ruby_spells\CSharpSpells\DynamicTests\obj\Debug\DynamicTests.pdb
