@@ -35,6 +35,7 @@
       <HintPath>..\packages\nspec.0.9.58\lib\NSpec.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,15 +45,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebuggerShim.cs" />
+    <Compile Include="describe_5_changes.cs" />
     <Compile Include="describe_1_argument_arrays.cs" />
     <Compile Include="describe_2_alias.cs" />
     <Compile Include="describe_3_ghost_methods.cs" />
     <Compile Include="describe_4_extending_class.cs" />
+    <Compile Include="describe_6_validations.cs" />
+    <Compile Include="Oak\Association.cs" />
+    <Compile Include="Oak\Changes.cs" />
+    <Compile Include="Oak\ConnectionProfile.cs" />
+    <Compile Include="Oak\DynamicModel.cs" />
+    <Compile Include="Oak\DynamicModels.cs" />
     <Compile Include="Oak\Gemini.cs" />
+    <Compile Include="Oak\Massive.cs" />
     <Compile Include="Oak\ObjectExtensions.cs" />
+    <Compile Include="Oak\Query.cs" />
+    <Compile Include="Oak\Seed.cs" />
+    <Compile Include="Oak\Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
