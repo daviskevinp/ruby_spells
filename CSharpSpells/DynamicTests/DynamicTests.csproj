@@ -51,6 +51,7 @@
     <Compile Include="describe_3_ghost_methods.cs" />
     <Compile Include="describe_4_extending_class.cs" />
     <Compile Include="describe_6_validations.cs" />
+    <Compile Include="describe_7_associations.cs" />
     <Compile Include="Oak\Association.cs" />
     <Compile Include="Oak\Changes.cs" />
     <Compile Include="Oak\ConnectionProfile.cs" />
