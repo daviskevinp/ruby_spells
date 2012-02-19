@@ -44,9 +44,7 @@ namespace Oak
 
         public bool HasValidationCapabilities(dynamic mixWith)
         {
-            if (mixWith is Gemini) return mixWith.RespondsTo("Validates");
-
-            return mixWith.GetType().GetMethod("Validates") != null;
+            return mixWith.GetType().GetMethod("Validates") != null || mixWith.RespondsTo("Validates");
         }
 
         public void AddError(string property, string message)
