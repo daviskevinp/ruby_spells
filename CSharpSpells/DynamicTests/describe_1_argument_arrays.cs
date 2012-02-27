@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests.ArgumentArrays
 {
@@ -25,30 +26,32 @@ namespace DynamicTests.ArgumentArrays
         }
     }
 
-    class describe_1_argument_arrays : nspec
+    [TestFixture]
+    public class describe_1_argument_arrays
     {
-        void it_class_is_returned_for_each_arg()
+        [Test]
+        public void it_class_is_returned_for_each_arg()
         {
             var foo = new Foo();
 
             var names = foo.ClassNames("abc", 1, 6.4099983).ToList();
 
-            names[0].should_be(typeof(string));
+            Assert.AreEqual(names[0], typeof(string));
 
-            names[1].should_be(typeof(int));
+            Assert.AreEqual(names[1], typeof(int));
 
-            names[2].should_be(typeof(double));
+            Assert.AreEqual(names[2], typeof(double));
         }
 
-        void specify_dynamic_named_params()
+        public void specify_dynamic_named_params()
         {
             dynamic foo = new DynamicFoo();
 
             var members = foo.Find(FirstName: "Amir", LastName: "Rajan") as IEnumerable<string>;
 
-            members.should_contain("FirstName");
+            CollectionAssert.Contains(members, "FirstName");
 
-            members.should_contain("LastName");
+            CollectionAssert.Contains(members, "LastName");
         }
     }
 }
