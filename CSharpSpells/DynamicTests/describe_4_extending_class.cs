@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests.Extend
 {
@@ -31,7 +28,8 @@ namespace DynamicTests.Extend
         }
     }
 
-    class describe_4_extending_class : nspec
+    [TestFixture]
+    public class describe_4_extending_class
     {
         static describe_4_extending_class()
         {
@@ -46,17 +44,18 @@ namespace DynamicTests.Extend
             });
         }
 
-        void it_works()
+        [Test]
+        public void it_works()
         {
             dynamic foo = new Foo();
 
-            (foo.SayFoo() as string).should_be("foo");
+            Assert.AreEqual("foo", foo.SayFoo());
 
-            (foo.SayHello() as string).should_be("hello");
+            Assert.AreEqual("hello", foo.SayHello());
 
-            (foo.SayBye() as string).should_be("bye");
+            Assert.AreEqual("bye", foo.SayBye());
 
-            (foo.SayBar() as string).should_be("bar");
+            Assert.AreEqual("bar", foo.SayBar());
         }
     }
 }

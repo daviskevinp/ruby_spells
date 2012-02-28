@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using NSpec;
 using Massive;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests
 {
@@ -69,43 +68,45 @@ namespace DynamicTests
         }
     }
 
-    class describe_7_associations : nspec
+    [TestFixture]
+    public class describe_7_associations
     {
         Seed seed;
 
-        dynamic blogId;
-
-        dynamic commentId;
-
-        dynamic comment;
-
-        dynamic blog;
+        dynamic blogId, commentId, comment, blog;
 
         Comments comments;
 
         Blogs blogs;
 
-        void before_each()
+        [SetUp]
+        public void before_each()
         {
             comments = new Comments();
 
             blogs = new Blogs();
 
             SetupSchema();
+
+            blogId = new { Title = "Some Blog", Body = "Lorem Ipsum" }.InsertInto("Blogs");
+
+            commentId = new { BlogId = blogId, Text = "Comment 1" }.InsertInto("Comments");
         }
 
-        void specify_comment_belongs_to_blog()
+        [Test]
+        public void specify_comment_belongs_to_blog()
         {
             comment = comments.Single(commentId);
 
-            (comment.Blog().Title as string).should_be("Some Blog");
+            Assert.AreEqual("Some Blog", comment.Blog().Title);
         }
 
-        void specify_blog_as_many_comments()
+        [Test]
+        public void specify_blog_as_many_comments()
         {
             blog = blogs.Single(blogId);
 
-            (blog.Comments().First().Text as string).should_be("Comment 1");
+            Assert.AreEqual("Comment 1", blog.Comments().First().Text);
         }
 
         void SetupSchema()
@@ -127,10 +128,6 @@ namespace DynamicTests
                 new { BlogId = "int", ForeignKey = "Blogs(Id)" },
                 new { Text = "nvarchar(1000)" }
             }).ExecuteNonQuery();
-
-            blogId = new { Title = "Some Blog", Body = "Lorem Ipsum" }.InsertInto("Blogs");
-
-            commentId = new { BlogId = blogId, Text = "Comment 1" }.InsertInto("Comments");
         }
     }
 }

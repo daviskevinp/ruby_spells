@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests.Aliases
 {
@@ -20,6 +17,18 @@ namespace DynamicTests.Aliases
         }
     }
 
+    [TestFixture]
+    public class describe_2_alias
+    {
+        [Test]
+        public void it_aliases_and_original_methods_have_same_output()
+        {
+            var foo = new Foo();
+
+            Assert.AreEqual(foo.Hello(), foo.SayHello());
+        }
+    }
+
     class FooDynamic : Gemini
     {
         public FooDynamic()
@@ -33,20 +42,15 @@ namespace DynamicTests.Aliases
         }
     }
 
-    class describe_2_alias : nspec
+    [TestFixture]
+    public class describe_2_dynamic_alias
     {
-        void it_aliases_and_original_methods_have_same_output()
-        {
-            var foo = new Foo();
-
-            foo.SayHello().should_be(foo.Hello());
-        }
-
-        void it_dynamic_version_works_too()
+        [Test]
+        public void it_dynamic_version_works_too()
         {
             dynamic foo = new FooDynamic();
 
-            (foo.SayHello() as string).should_be(foo.Hello() as string);
+            Assert.AreEqual(foo.Hello(), foo.SayHello());
         }
     }
 }

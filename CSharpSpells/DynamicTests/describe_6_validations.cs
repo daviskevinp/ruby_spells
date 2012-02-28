@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests
 {
-    class describe_6_validations : nspec
+    [TestFixture]
+    public class describe_6_validations
     {
-        void it_works()
+        [Test]
+        public void it_works()
         {
             dynamic person = new Gemini();
 
@@ -28,11 +28,11 @@ namespace DynamicTests
 
             new Validations(person);
 
-            ((bool)person.IsValid()).should_be_false();
+            Assert.IsFalse(person.IsValid());
 
-            (person.Errors()[0].Value as string).should_be("FirstName is required.");
+            Assert.AreEqual("FirstName is required.", person.Errors()[0].Value);
 
-            (person.Errors()[1].Value as string).should_be("Email is required.");
+            Assert.AreEqual("Email is required.", person.Errors()[1].Value);
 
             person.FirstName = "Jane";
 
@@ -40,7 +40,7 @@ namespace DynamicTests
 
             person.EmailConfirmation = "user@example.com";
 
-            ((bool)person.IsValid()).should_be_true();
+            Assert.IsTrue(person.IsValid());
         }
     }
 }

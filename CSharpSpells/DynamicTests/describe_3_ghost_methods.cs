@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests.GhostMethods
 {
@@ -17,15 +14,17 @@ namespace DynamicTests.GhostMethods
         }
     }
 
-    class describe_3_ghost_methods : nspec
+    [TestFixture]
+    public class describe_3_ghost_methods
     {
-        void it_calls_method_via_method_missing()
+        [Test]
+        public void it_calls_method_via_method_missing()
         {
             dynamic foo = new Foo();
 
-            (foo.SayBye() as string).should_be("Bye");
+            Assert.AreEqual("Bye", foo.SayBye());
 
-            (foo.SayHello() as string).should_be("Hello");
+            Assert.AreEqual("Hello", foo.SayHello());
         }
     }
 }

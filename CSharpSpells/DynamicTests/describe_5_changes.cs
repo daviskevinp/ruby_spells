@@ -1,31 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
+using NUnit.Framework;
 
 namespace DynamicTests
 {
-    class describe_5_changes : nspec
+    [TestFixture]
+    public class describe_5_changes
     {
-        void it_works()
+        [Test]
+        public void it_works()
         {
             dynamic person = new Gemini(new { FirstName = "Jane" });
 
-            (person.FirstName as string).should_be("Jane");
+            Assert.AreEqual("Jane", person.FirstName);
 
             new Changes(person);
 
-            ((bool)person.HasChanged()).should_be_false();
+            Assert.IsFalse(person.HasChanged());
 
             person.FirstName = "Jane2";
 
-            ((bool)person.HasChanged()).should_be_true();
+            Assert.IsTrue(person.HasChanged());
 
-            (person.Changes("FirstName").Original as string).should_be("Jane");
+            Assert.AreEqual("Jane", person.Changes("FirstName").Original);
 
-            (person.Changes("FirstName").New as string).should_be("Jane2");
+            Assert.AreEqual("Jane2", person.Changes("FirstName").New);
         }
     }
 }

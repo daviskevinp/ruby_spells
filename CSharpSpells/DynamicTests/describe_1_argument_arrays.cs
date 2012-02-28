@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using NSpec;
 using Oak;
 using NUnit.Framework;
 
@@ -13,16 +11,6 @@ namespace DynamicTests.ArgumentArrays
         public IEnumerable<Type> ClassNames(params object[] args)
         {
             return args.Select(arg => arg.GetType());
-        }
-    }
-
-    class DynamicFoo : Gemini
-    {
-        IEnumerable<dynamic> Find(dynamic args)
-        {
-            return args.Members();
-
-            //args.FirstName, args.LastName are accessible here
         }
     }
 
@@ -42,7 +30,22 @@ namespace DynamicTests.ArgumentArrays
 
             Assert.AreEqual(names[2], typeof(double));
         }
+    }
 
+    class DynamicFoo : Gemini
+    {
+        IEnumerable<dynamic> Find(dynamic args)
+        {
+            return args.Members();
+
+            //args.FirstName, args.LastName are accessible here
+        }
+    }
+
+    [TestFixture]
+    public class describe_1_dynamic_argument_arrays
+    {
+        [Test]
         public void specify_dynamic_named_params()
         {
             dynamic foo = new DynamicFoo();
@@ -52,6 +55,6 @@ namespace DynamicTests.ArgumentArrays
             CollectionAssert.Contains(members, "FirstName");
 
             CollectionAssert.Contains(members, "LastName");
-        }
+        }        
     }
 }
