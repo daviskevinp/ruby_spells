@@ -1,6 +1,9 @@
 ﻿using System;
 using Oak;
 using NUnit.Framework;
+using System.Dynamic;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DynamicTests.Extend
 {
@@ -56,6 +59,38 @@ namespace DynamicTests.Extend
             Assert.AreEqual("bye", foo.SayBye());
 
             Assert.AreEqual("bar", foo.SayBar());
+        }
+    }
+
+    public class ExampleDynamic : DynamicObject
+    {
+        private static List<KeyValuePair<Type, Func<dynamic, dynamic>>> Includes = new List<KeyValuePair<Type, Func<dynamic, dynamic>>>();
+
+        private List<Type> types = new List<Type>();
+
+        public static void Extend<A, B>()
+        {
+            Includes.Add(new KeyValuePair<Type, Func<dynamic, dynamic>>(typeof(A), 
+            (i) =>
+            {
+                var constructor = typeof(B).GetConstructor(new Type[] { typeof(object) });
+
+                constructor.Invoke(new object[] { i });
+
+                return null;
+            }));
+        }
+
+        public static void Extend<T>(Action<dynamic> extension)
+        {
+            Includes.Add(new KeyValuePair<Type, Func<dynamic, dynamic>>(typeof(T), (i) => { extension(i); return null; }));
+        }
+
+        public ExampleDynamic()
+        {
+            var includes = Includes.Where(s => types.Contains(s.Key));
+
+            foreach (var include in includes) include.Value(this);
         }
     }
 }

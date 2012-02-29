@@ -1,70 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="c:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.dll" total="10" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-02-27" time="23:31:58">
-  <environment nunit-version="2.6.0.12051" clr-version="2.0.50727.5448" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="c:\Development\ruby_spells\CSharpSpells" machine-name="SASUKE" user="Amir" user-domain="Sasuke" />
+<test-results name="C:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.dll" total="10" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-02-29" time="16:57:37">
+  <environment nunit-version="2.6.0.12051" clr-version="2.0.50727.5448" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Development\ruby_spells\CSharpSpells" machine-name="SASUKE" user="Amir" user-domain="Sasuke" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="c:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.dll" executed="True" result="Success" success="True" time="3.511" asserts="0">
+  <test-suite type="Assembly" name="C:\Development\ruby_spells\CSharpSpells\DynamicTests\bin\Debug\DynamicTests.dll" executed="True" result="Success" success="True" time="3.204" asserts="0">
     <results>
-      <test-suite type="Namespace" name="DynamicTests" executed="True" result="Success" success="True" time="3.488" asserts="0">
+      <test-suite type="Namespace" name="DynamicTests" executed="True" result="Success" success="True" time="3.186" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Aliases" executed="True" result="Success" success="True" time="1.299" asserts="0">
+          <test-suite type="Namespace" name="Aliases" executed="True" result="Success" success="True" time="1.179" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="describe_2_alias" executed="True" result="Success" success="True" time="0.059" asserts="0">
+              <test-suite type="TestFixture" name="describe_2_alias" executed="True" result="Success" success="True" time="0.046" asserts="0">
                 <results>
-                  <test-case name="DynamicTests.Aliases.describe_2_alias.it_aliases_and_original_methods_have_same_output" executed="True" result="Success" success="True" time="0.039" asserts="1" />
+                  <test-case name="DynamicTests.Aliases.describe_2_alias.it_aliases_and_original_methods_have_same_output" executed="True" result="Success" success="True" time="0.029" asserts="1" />
                 </results>
               </test-suite>
-              <test-suite type="TestFixture" name="describe_2_dynamic_alias" executed="True" result="Success" success="True" time="1.228" asserts="0">
+              <test-suite type="TestFixture" name="describe_2_dynamic_alias" executed="True" result="Success" success="True" time="1.120" asserts="0">
                 <results>
-                  <test-case name="DynamicTests.Aliases.describe_2_dynamic_alias.it_dynamic_version_works_too" executed="True" result="Success" success="True" time="1.227" asserts="1" />
-                </results>
-              </test-suite>
-            </results>
-          </test-suite>
-          <test-suite type="Namespace" name="ArgumentArrays" executed="True" result="Success" success="True" time="0.131" asserts="0">
-            <results>
-              <test-suite type="TestFixture" name="describe_1_argument_arrays" executed="True" result="Success" success="True" time="0.010" asserts="0">
-                <results>
-                  <test-case name="DynamicTests.ArgumentArrays.describe_1_argument_arrays.it_class_is_returned_for_each_arg" executed="True" result="Success" success="True" time="0.009" asserts="3" />
-                </results>
-              </test-suite>
-              <test-suite type="TestFixture" name="describe_1_dynamic_argument_arrays" executed="True" result="Success" success="True" time="0.117" asserts="0">
-                <results>
-                  <test-case name="DynamicTests.ArgumentArrays.describe_1_dynamic_argument_arrays.specify_dynamic_named_params" executed="True" result="Success" success="True" time="0.116" asserts="2" />
+                  <test-case name="DynamicTests.Aliases.describe_2_dynamic_alias.it_dynamic_version_works_too" executed="True" result="Success" success="True" time="1.119" asserts="1" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="describe_5_changes" executed="True" result="Success" success="True" time="0.280" asserts="0">
+          <test-suite type="Namespace" name="ArgumentArrays" executed="True" result="Success" success="True" time="0.120" asserts="0">
             <results>
-              <test-case name="DynamicTests.describe_5_changes.it_works" executed="True" result="Success" success="True" time="0.279" asserts="5" />
-            </results>
-          </test-suite>
-          <test-suite type="TestFixture" name="describe_6_validations" executed="True" result="Success" success="True" time="0.214" asserts="0">
-            <results>
-              <test-case name="DynamicTests.describe_6_validations.it_works" executed="True" result="Success" success="True" time="0.213" asserts="4" />
-            </results>
-          </test-suite>
-          <test-suite type="TestFixture" name="describe_7_associations" executed="True" result="Success" success="True" time="1.440" asserts="0">
-            <results>
-              <test-case name="DynamicTests.describe_7_associations.specify_blog_as_many_comments" executed="True" result="Success" success="True" time="1.378" asserts="1" />
-              <test-case name="DynamicTests.describe_7_associations.specify_comment_belongs_to_blog" executed="True" result="Success" success="True" time="0.058" asserts="1" />
-            </results>
-          </test-suite>
-          <test-suite type="Namespace" name="Extend" executed="True" result="Success" success="True" time="0.054" asserts="0">
-            <results>
-              <test-suite type="TestFixture" name="describe_4_extending_class" executed="True" result="Success" success="True" time="0.053" asserts="0">
+              <test-suite type="TestFixture" name="describe_1_argument_arrays" executed="True" result="Success" success="True" time="0.007" asserts="0">
                 <results>
-                  <test-case name="DynamicTests.Extend.describe_4_extending_class.it_works" executed="True" result="Success" success="True" time="0.050" asserts="4" />
+                  <test-case name="DynamicTests.ArgumentArrays.describe_1_argument_arrays.it_class_is_returned_for_each_arg" executed="True" result="Success" success="True" time="0.006" asserts="3" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="describe_1_dynamic_argument_arrays" executed="True" result="Success" success="True" time="0.109" asserts="0">
+                <results>
+                  <test-case name="DynamicTests.ArgumentArrays.describe_1_dynamic_argument_arrays.specify_dynamic_named_params" executed="True" result="Success" success="True" time="0.108" asserts="2" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="Namespace" name="GhostMethods" executed="True" result="Success" success="True" time="0.045" asserts="0">
+          <test-suite type="TestFixture" name="describe_5_changes" executed="True" result="Success" success="True" time="0.247" asserts="0">
             <results>
-              <test-suite type="TestFixture" name="describe_3_ghost_methods" executed="True" result="Success" success="True" time="0.044" asserts="0">
+              <test-case name="DynamicTests.describe_5_changes.it_works" executed="True" result="Success" success="True" time="0.245" asserts="5" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="describe_6_validations" executed="True" result="Success" success="True" time="0.192" asserts="0">
+            <results>
+              <test-case name="DynamicTests.describe_6_validations.it_works" executed="True" result="Success" success="True" time="0.191" asserts="4" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="describe_7_associations" executed="True" result="Success" success="True" time="1.340" asserts="0">
+            <results>
+              <test-case name="DynamicTests.describe_7_associations.specify_blog_as_many_comments" executed="True" result="Success" success="True" time="1.287" asserts="1" />
+              <test-case name="DynamicTests.describe_7_associations.specify_comment_belongs_to_blog" executed="True" result="Success" success="True" time="0.050" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="Namespace" name="Extend" executed="True" result="Success" success="True" time="0.046" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="describe_4_extending_class" executed="True" result="Success" success="True" time="0.046" asserts="0">
                 <results>
-                  <test-case name="DynamicTests.GhostMethods.describe_3_ghost_methods.it_calls_method_via_method_missing" executed="True" result="Success" success="True" time="0.043" asserts="2" />
+                  <test-case name="DynamicTests.Extend.describe_4_extending_class.it_works" executed="True" result="Success" success="True" time="0.043" asserts="4" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="Namespace" name="GhostMethods" executed="True" result="Success" success="True" time="0.037" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="describe_3_ghost_methods" executed="True" result="Success" success="True" time="0.037" asserts="0">
+                <results>
+                  <test-case name="DynamicTests.GhostMethods.describe_3_ghost_methods.it_calls_method_via_method_missing" executed="True" result="Success" success="True" time="0.036" asserts="2" />
                 </results>
               </test-suite>
             </results>
