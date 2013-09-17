@@ -1,6 +1,7 @@
 ﻿using System;
 using Oak;
 using NUnit.Framework;
+using NSpec;
 using System.Dynamic;
 
 namespace DynamicTests.GhostMethods
@@ -19,11 +20,9 @@ namespace DynamicTests.GhostMethods
         }
     }
 
-    [TestFixture]
-    public class describe_3_ghost_methods
+    class describe_3_ghost_methods : nspec
     {
-        [Test]
-        public void it_calls_method_via_method_missing()
+        void it_calls_method_via_method_missing()
         {
             dynamic foo = new Foo();
 

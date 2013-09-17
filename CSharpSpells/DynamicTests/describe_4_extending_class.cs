@@ -1,6 +1,7 @@
 ﻿using System;
 using Oak;
 using NUnit.Framework;
+using NSpec;
 using System.Dynamic;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,7 @@ namespace DynamicTests.Extend
         }
     }
 
-    [TestFixture]
-    public class describe_4_extending_class
+    class describe_4_extending_class : nspec
     {
         static describe_4_extending_class()
         {
@@ -40,15 +40,13 @@ namespace DynamicTests.Extend
 
             Gemini.Extend<Foo, Bye>();
 
-            Gemini.Extend<Foo>(
-            i =>
+            Gemini.Extend<Foo>(i =>
             {
                 i.SayBar = new DynamicFunction(() => "bar");
             });
         }
 
-        [Test]
-        public void it_works()
+        void it_works()
         {
             dynamic foo = new Foo();
 

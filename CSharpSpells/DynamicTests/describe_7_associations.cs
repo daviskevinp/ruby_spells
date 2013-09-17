@@ -4,6 +4,7 @@ using System.Linq;
 using Massive;
 using Oak;
 using NUnit.Framework;
+using NSpec;
 
 namespace DynamicTests
 {
@@ -68,8 +69,7 @@ namespace DynamicTests
         }
     }
 
-    [TestFixture]
-    public class describe_7_associations
+    class describe_7_associations : nspec
     {
         Seed seed;
 
@@ -79,8 +79,7 @@ namespace DynamicTests
 
         Blogs blogs;
 
-        [SetUp]
-        public void before_each()
+        void before_each()
         {
             comments = new Comments();
 
@@ -88,21 +87,27 @@ namespace DynamicTests
 
             SetupSchema();
 
-            blogId = new { Title = "Some Blog", Body = "Lorem Ipsum" }.InsertInto("Blogs");
+            blogId = new
+            {
+                Title = "Some Blog",
+                Body = "Lorem Ipsum"
+            }.InsertInto("Blogs");
 
-            commentId = new { BlogId = blogId, Text = "Comment 1" }.InsertInto("Comments");
+            commentId = new
+            {
+                BlogId = blogId,
+                Text = "Comment 1"
+            }.InsertInto("Comments");
         }
 
-        [Test]
-        public void specify_comment_belongs_to_blog()
+        void specify_comment_belongs_to_blog()
         {
             comment = comments.Single(commentId);
 
             Assert.AreEqual("Some Blog", comment.Blog().Title);
         }
 
-        [Test]
-        public void specify_blog_as_many_comments()
+        void specify_blog_as_many_comments()
         {
             blog = blogs.Single(blogId);
 

@@ -3,6 +3,7 @@ using Oak;
 using NUnit.Framework;
 using System.Dynamic;
 using System.Collections.Generic;
+using NSpec;
 
 namespace DynamicTests.Aliases
 {
@@ -19,11 +20,9 @@ namespace DynamicTests.Aliases
         }
     }
 
-    [TestFixture]
-    public class describe_2_alias
+    class describe_2_alias : nspec
     {
-        [Test]
-        public void it_aliases_and_original_methods_have_same_output()
+        void it_aliases_and_original_methods_have_same_output()
         {
             var foo = new Foo();
 
@@ -44,11 +43,9 @@ namespace DynamicTests.Aliases
         }
     }
 
-    [TestFixture]
-    public class describe_2_dynamic_alias
+    class describe_2_dynamic_alias : nspec
     {
-        [Test]
-        public void it_dynamic_version_works_too()
+        void it_dynamic_version_works_too()
         {
             dynamic foo = new FooDynamic();
 

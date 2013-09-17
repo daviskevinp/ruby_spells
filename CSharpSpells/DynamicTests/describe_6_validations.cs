@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using Oak;
 using NUnit.Framework;
+using NSpec;
 
 namespace DynamicTests
 {
-    [TestFixture]
-    public class describe_6_validations
+    class describe_6_validations : nspec
     {
-        [Test]
-        public void it_works()
+        void it_works()
         {
             dynamic person = new Gemini();
 

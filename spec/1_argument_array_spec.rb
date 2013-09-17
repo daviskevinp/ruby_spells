@@ -11,7 +11,7 @@ describe "argument array" do
   it "class is returned for each arg" do
     foo = Foo.new
 
-    names = foo.class_names("abc", 1, 6.409983)
+    names = foo.class_names "abc", 1, 6.409983 
 
     names[0].should == String
 

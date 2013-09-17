@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Oak;
+using NSpec;
 using NUnit.Framework;
 
 namespace DynamicTests.ArgumentArrays
@@ -14,11 +15,9 @@ namespace DynamicTests.ArgumentArrays
         }
     }
 
-    [TestFixture]
-    public class describe_1_argument_arrays
+    class describe_1_argument_arrays : nspec
     {
-        [Test]
-        public void it_class_is_returned_for_each_arg()
+        void it_class_is_returned_for_each_arg()
         {
             var foo = new Foo();
 
@@ -37,16 +36,12 @@ namespace DynamicTests.ArgumentArrays
         IEnumerable<dynamic> Find(dynamic args)
         {
             return args.Members();
-
-            //args.FirstName, args.LastName are accessible here
         }
     }
 
-    [TestFixture]
-    public class describe_1_dynamic_argument_arrays
+    class describe_1_dynamic_argument_arrays : nspec
     {
-        [Test]
-        public void specify_dynamic_named_params()
+        void specify_dynamic_named_params()
         {
             dynamic foo = new DynamicFoo();
 

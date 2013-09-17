@@ -1,13 +1,12 @@
 ﻿using System;
 using Oak;
 using NUnit.Framework;
+using NSpec;
 
 namespace DynamicTests
 {
-    [TestFixture]
-    public class describe_5_changes
+    class describe_5_changes : nspec
     {
-        [Test]
         public void it_works()
         {
             dynamic person = new Gemini(new { FirstName = "Jane" });
