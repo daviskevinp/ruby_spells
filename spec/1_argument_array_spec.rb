@@ -5,6 +5,10 @@ class Foo
   def class_names(*args)
     return args.map { |arg| arg.class }
   end
+
+  def find(args)
+    puts args
+  end
 end
 
 describe "argument array" do
@@ -20,11 +24,3 @@ describe "argument array" do
     names[2].should == Float
   end
 end
-
-
-=begin
-ruby uses argument arrays in conjunction with hashes to define a jagged parameter list, for example:
-
-Person.find(:first, :order => "created_on DESC", :offset => 5)
-Person.find(:last, :conditions => [ "user_name = ?", "admin"])
-=end
